@@ -77,3 +77,82 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# INSTAL PROJECT :
+
+## FIRST INIT GIT REPOSITORY :
+
+```bash
+
+git init 
+
+```
+
+## ADD REMOTE URL :
+
+```bash
+
+git add remote origin https://github.com/julieSalha/LARAVEL-training-organization.git
+
+```
+
+## RÉCUPERER LE CODE :
+
+```bash
+
+git pull origin master
+
+```
+
+## INSTAL DEPENDANCIES  :
+
+```bash
+
+composer install
+
+```
+
+## INSTAL NPM  :
+
+```bash
+
+npm install
+
+```
+
+## CREATE A .ENV  :
+
+```bash
+
+cp .env.example .env
+
+```
+
+## GENERATE A KEY  :
+
+```bash
+
+php artisan key:generate
+
+```
+
+## LAUNCH PROJECT   :
+
+```bash
+
+npm run dev
+
+```
+
+## MIGRATE DATABASE  :
+
+Create a Databse in phpmyadmin call "training"
+
+
+## MIGRATE DATABASE  :
+
+```bash
+
+php artisan migrate
+
+```
