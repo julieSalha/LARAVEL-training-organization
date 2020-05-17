@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the teacher that owns the slot.
+     */
+    public function report()
+    {
+        return $this->hasOne('App\Report', 'report_id');
+    }
 }
