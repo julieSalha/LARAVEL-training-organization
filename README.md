@@ -157,7 +157,7 @@ npm run dev
 
 ## MIGRATE DATABASE  :
 
-Create a Databse in phpmyadmin call "training"
+Create a Databse in phpmyadmin call "organization"
 
 
 ## MIGRATE DATABASE  :
