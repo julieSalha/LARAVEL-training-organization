@@ -18,11 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->date('date_of_birth');
             $table->enum('gender', ['male', 'female', 'other']);
+            $table->string('job');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('role', ['adm', 'prof', 'user'])->default('user');
-            $table->integer('report_id')->default('0');
             $table->rememberToken();
             $table->timestamps();
         });
