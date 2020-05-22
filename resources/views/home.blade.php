@@ -29,6 +29,7 @@
                     Admin
                         <div class="alert" role="alert">
                             <a href="{{ url('/users') }}">Les utilisateurs</a>
+                            <a href="{{ url('/trainings') }}">Les Formations</a>
                         </div>
                     @elseif (Auth::user()->role == "prof")
                         <div class="alert alert-success" role="alert">

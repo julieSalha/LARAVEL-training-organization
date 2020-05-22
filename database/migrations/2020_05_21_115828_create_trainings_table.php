@@ -18,7 +18,7 @@ class CreateTrainingsTable extends Migration
             $table->string('name');
             $table->time('duration', 0);
             $table->timestamps();
-            $table->integer('teacher_id');
+            $table->foreignId('teacher_id')->references('id')->on('users');
         });
     }
 

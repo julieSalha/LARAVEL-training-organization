@@ -38,10 +38,11 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the teacher that owns the slot.
+     * Get the teacher that has the session.
      */
-    public function report()
+    public function teacher()
     {
-        return $this->hasOne('App\Report', 'report_id');
+        return $this->belongsTo();
     }
+
 }
