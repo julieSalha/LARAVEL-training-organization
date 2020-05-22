@@ -14,12 +14,13 @@
                         </div>
                     @endif
 
-                    {!! Form::open(['url' => "create_training"]) !!}
+                    {!! Form::model($training, ['route' => ['update_training', $training->id]]) !!}
                         nom :{!! Form::text('name') !!}<br>
                         Durée :{!! Form::time('duration') !!}<br>
                         Professeur : {!! Form::select('teacher_id', $users->pluck('name', 'id')) !!}<br>
-                        {!! Form::submit('Add Training') !!}
+                        {!! Form::submit('Update Training') !!}
                     {!! Form::close() !!}
+                    <a href="{{ route('delete_training', $training->id) }}">Supprimer la Formation</a>
                 </div>
             </div>
         </div>
