@@ -10,7 +10,7 @@
                     Tous les utilisateurs:
                     <ul>
                     @foreach ($users as $user)
-                        <li> {{$user->name}} ( {{$user->role}} ) - </li>
+                        <li> {{$user->name}} ( {{$user->role}} ) - <a href="{{ route('edit_user', $user->id) }}">Edit</a> </li>
                     @endforeach
                     </ul>
                 </div>
