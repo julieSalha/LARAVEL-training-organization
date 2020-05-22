@@ -9,8 +9,8 @@ class Training extends Model
     /**
      * Get the teacher that has the session.
      */
-    public function teacher()
+    public function user()
     {
-        return $this->hasOne('App\User', 'teacher_id');
+        return $this->hasOne('App\User', 'id', 'teacher_id');
     }
 }

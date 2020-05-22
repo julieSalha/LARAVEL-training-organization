@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Training;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -97,5 +98,42 @@ class AdminController extends Controller
         $user = User::find($id);
         $user->delete();
         return redirect()->route('users');
+    }
+
+    /**
+     * Show all trainings.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function trainings()
+    {
+        $trainings = Training::with('user')->get();
+        return view('trainings', ['trainings'=>$trainings]);
+    }
+
+    /**
+     * Go to page add_training.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function add_training()
+    {
+        $users = User::where('role', 'prof')->get();
+        return view('add_training', ['users'=>$users]);
+    }
+
+    /**
+     * Create User in database.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function create_training(Request $request)
+    {
+        $training = new Training;
+        $training->name = $request->name;
+        $training->duration = $request->duration;
+        $training->teacher_id = $request->teacher_id;
+        $training->save();
+        return redirect()->route('trainings');
     }
 }

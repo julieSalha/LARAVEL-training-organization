@@ -26,3 +26,6 @@ Route::post('/create_user', 'AdminController@create_user')->name('create_user');
 Route::get('/edit_user/{id}', 'AdminController@edit_user')->name('edit_user');
 Route::post('/update_user/{id}', 'AdminController@update_user')->name('update_user');
 Route::get('/delete_user/{id}', 'AdminController@delete_user')->name('delete_user');
+Route::get('/trainings', 'AdminController@trainings')->name('trainings');
+Route::get('/add_training', 'AdminController@add_training')->name('add_training');
+Route::post('/create_training', 'AdminController@create_training')->name('create_training');
