@@ -123,7 +123,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Create User in database.
+     * Create Training in database.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -134,6 +134,45 @@ class AdminController extends Controller
         $training->duration = $request->duration;
         $training->teacher_id = $request->teacher_id;
         $training->save();
+        return redirect()->route('trainings');
+    }
+
+    /**
+     * Edit a training .
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function edit_training($id)
+    {
+        $training = Training::find($id);
+        $users = User::where('role', 'prof')->get();
+        return view('edit_training', ['users' => $users], ['training'=> $training]);
+    }
+
+    /**
+     * update the training in database.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function update_training($id, Request $request)
+    {
+        $training = Training::find($id);
+        $training->name = $request->name;
+        $training->duration = $request->duration;
+        $training->teacher_id = $request->teacher_id;
+        $training->save();
+        return redirect()->route('trainings');
+    }
+
+    /**
+     * Delete a training .
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function delete_training($id)
+    {
+        $training = Training::find($id);
+        $training->delete();
         return redirect()->route('trainings');
     }
 }
