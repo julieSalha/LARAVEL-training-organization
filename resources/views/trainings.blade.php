@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <ul>
                     @foreach ($trainings as $training)
-                        <li> {{$training->name}} - <a href="">Editer la formation</a>
+                        <li> {{$training->name}} - <a href="{{ route('edit_training', $training->id) }}">Editer la formation</a>
                             <ul>
                                 <li> {{$training->duration}} </li>
                                 <li> {{$training->user->name}} </li>
