@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Tableau de bord</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                   Vous êtes bien connecté !
                 </div>
             </div>
         </div>
@@ -22,23 +21,22 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Vous êtes:</div>
+                <div class="card-header">Vous êtes :</div>
 
                 <div class="card-body">
                     @if (Auth::user()->role == "adm")
-                    Admin
+                    <h3>Administrateur</h3>
                         <div class="alert" role="alert">
                             <a href="{{ url('/users') }}">Les utilisateurs</a>
                             <a href="{{ url('/trainings') }}">Les Formations</a>
                         </div>
                     @elseif (Auth::user()->role == "prof")
-                        <div class="alert alert-success" role="alert">
-                            prof
+                    <h3>Professeur</h3>
+                        <div class="alert" role="alert">
+                            <a href="{{ url('/trainings') }}">Les Formations</a>
                         </div>
                     @elseif (Auth::user()->role == "user")
-                        <div class="alert alert-success" role="alert">
-                            user
-                        </div>
+                    <h3>Employé</h3>
                     @endif
                 </div>
             </div>
