@@ -17,8 +17,8 @@ class CreateReportsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('content');
-            $table->integer('session_id')->default('0');
-            $table->integer('teacher_id')->default('0');
+            $table->foreignId('session_id')->references('id')->on('sessions');
+            $table->foreignId('teacher_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
