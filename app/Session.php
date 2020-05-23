@@ -15,14 +15,6 @@ class Session extends Model
     }
 
     /**
-     * Get the teacher that has the session.
-     */
-    public function user()
-    {
-        return $this->hasOne('App\User', 'id','teacher_id');
-    }
-
-    /**
      * Get the training of the session.
      */
     public function training()
