@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Training extends Model
+class Teacher extends Model
 {
     /**
-     * Get the teacher that has the session.
+     * Get the session that has the teacher.
      */
-    public function user()
+    public function session()
     {
-        return $this->hasOne('App\User', 'id', 'teacher_id');
+        return $this->belongsTo('App\Session');
     }
 }
