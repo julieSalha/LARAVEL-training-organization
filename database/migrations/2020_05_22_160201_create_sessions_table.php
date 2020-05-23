@@ -20,8 +20,9 @@ class CreateSessionsTable extends Migration
             $table->integer('availables_seats');
             $table->boolean('configuration');
             $table->integer('teacher_id');
-            $table->integer('room_id');
-            $table->integer('training_id');
+            $table->foreignId('teacher_id')->references('id')->on('users');
+            $table->foreignId('room_id')->references('id')->on('rooms');
+            $table->foreignId('training_id')->references('id')->on('trainings');
             $table->timestamps();
         });
     }

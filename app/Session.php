@@ -11,15 +11,15 @@ class Session extends Model
      */
     public function room()
     {
-        return $this->hasOne('App\Room', 'room_id');
+        return $this->hasOne('App\Room', 'id', 'room_id');
     }
 
     /**
      * Get the teacher that has the session.
      */
-    public function teacher()
+    public function user()
     {
-        return $this->hasOne('App\User', 'teacher_id');
+        return $this->hasOne('App\User', 'id','teacher_id');
     }
 
     /**
@@ -27,6 +27,6 @@ class Session extends Model
      */
     public function training()
     {
-        return $this->hasOne('App\Training', 'training_id');
+        return $this->hasOne('App\Training', 'id','training_id');
     }
 }
