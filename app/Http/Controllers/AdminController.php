@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Training;
+use App\Session;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -174,5 +175,17 @@ class AdminController extends Controller
         $training = Training::find($id);
         $training->delete();
         return redirect()->route('trainings');
+    }
+
+    /**
+     * Show sessions of a training.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function sessions($id)
+    {
+        $training = Training::find($id);
+        $sessions = Session::where('training_id', $id)->get();
+        return view('sessions', ['sessions'=>$sessions], ['training'=>$training]);
     }
 }
