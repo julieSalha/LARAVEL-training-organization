@@ -25,10 +25,11 @@ class TeacherController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-   // public function index()
-   // {
-
-   // }
+    public function index()
+    {
+        $users = User::all();
+        return view('users', ['users'=>$users]);
+    }
 
     /**
      * Show all trainings.
