@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Room extends Model
+class Teacher extends Model
 {
     /**
-     * Get the session that has the room.
+     * Get the session that has the teacher.
      */
     public function session()
     {
