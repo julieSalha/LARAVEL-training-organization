@@ -1,0 +1,26 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Grade extends Model
+{
+    /**
+     * Grade and session relation
+     */
+
+    public function session()
+    {
+        return $this->hasMany('App\Session', 'id', 'session_id');
+    }
+
+    /**
+     * Grade and user relation
+     */
+
+    public function user()
+    {
+        return $this->hasOne('App\User', 'id', 'user_id');
+    }
+}
