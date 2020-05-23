@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Session extends Model
 {
     /**
+     * Get the training of the session.
+     */
+    public function training()
+    {
+        return $this->hasOne('App\Training', 'id','training_id');
+    }
+
+    /**
      * Get the room that has the session.
      */
     public function room()
@@ -15,10 +23,26 @@ class Session extends Model
     }
 
     /**
-     * Get the training of the session.
+     * Get the teacher that has the session.
      */
-    public function training()
+    public function teacher()
     {
-        return $this->hasOne('App\Training', 'id','training_id');
+        return $this->hasOne('App\Teacher', 'id', 'teacher_id');
+    }
+
+    /**
+     * Get the report that has the session.
+     */
+    public function report()
+    {
+        return $this->hasOne('App\Report');
+    }
+
+    /**
+     * Get the grade that has the session.
+     */
+    public function grade()
+    {
+        return $this->hasMany('App\Grade');
     }
 }

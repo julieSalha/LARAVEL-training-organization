@@ -12,7 +12,7 @@ class Grade extends Model
 
     public function session()
     {
-        return $this->hasMany('App\Session', 'id', 'session_id');
+        return $this->belongsTo('App\Session', 'id', 'session_id');
     }
 
     /**
