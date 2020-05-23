@@ -61,7 +61,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Edit an user .
+     * Edit a user.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -90,7 +90,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Delete an user .
+     * Delete a user.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
